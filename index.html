@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- Based on the source code from The First Workshop on Short-Form Video Understanding: The Next Frontier in Video Intelligence (ICCV 2025) -->
+<!-- Source: https://short-form-video-understanding.github.io/ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+        name="viewport"
+        content="initial-scale=1.0, user-scalable=no, width=device-width"
+    />
+    <title>Video Generative Models: Benchmarks and Evaluation Workshop @ CVPR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+        /* Ensure the map container fills its section */
+        #map-container {
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#submission">Submission</a></li>
+                <!-- <li><a href="#oral-papers">Accepted Papers</a></li> -->
+                <!-- <li><a href="#area-chairs">Program Committee</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>1st Video Generative Models: <br> Benchmarks and Evaluation</h1>
+                <h2>@ CVPR 2026 Workshop</h2>
+                <p class="hero-subtitle"></p>
+                <p class="hero-subtitle">Data: TBD</p>
+                <p class="hero-subtitle">Denver CO, USA</p>
+                <div class="cta-buttons">
+                    <a href="#submission" class="cta-primary">Submit Paper</a>
+                    <a href="#about" class="cta-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                <p>TBD</p>
+            </div>
+        </section>
+
+        <section id="topics" class="section bg-light">
+            <div class="container">
+                <h2>Call for Papers</h2>
+                <p>We invite submissions on the following topics but are not limited to:</p>
+                <br>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h3>Video Generative Models</h3>
+                        <ul>
+                            <li></li>
+                        </ul>                
+                    </div>
+                    <div class="topic-card">
+                        <h3>Benchmarks & Evaluation</h3>
+                        <ul>
+                            <li></li>
+                        </ul>   
+                    </div>
+                    <div class="topic-card">
+                        <h3>Applications</h3>
+                        <ul>
+                            <li></li>
+                        </ul>   
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="speakers" class="section">
+            <div class="container">
+                <h2>Speakers</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/zhuang.png" alt="Zhuang Liu" class="profile-img">
+                        </div>
+                        <h3><a href="https://liuzhuang13.github.io/" target="_blank">Zhuang Liu</a></h3>
+                        <p class="affiliation-speaker">Princeton University</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/yan.png" alt="Yan Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://yanwang.org/" target="_blank">Yan Wang</a></h3>
+                        <p class="affiliation-speaker">NVIDIA Research</p>
+                        <p class="title">Research Scientist <br>& Tech Lead</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/minghsuan.jpg" alt="Ming-Hsuan Yang" class="profile-img">
+                        </div>
+                        <h3><a href="https://faculty.ucmerced.edu/mhyang/" target="_blank">Ming-Hsuan Yang</a></h3>
+                        <p class="affiliation-speaker">UC Merced & Google DeepMind</p>
+                        <p class="title">Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/jiajun.jpg" alt="Jiajun Wu" class="profile-img">
+                        </div>
+                        <h3><a href="https://jiajunwu.com/" target="_blank">Jiajun Wu</a></h3>
+                        <p class="affiliation-speaker">Stanford University</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="organizers" class="section bg-light">
+            <div class="container">
+                <h2>Organizers</h2>
+                <div class="organizers-grid">
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/shuoxing.jpg" alt="Shuo Xing" class="profile-img">
+                        </div>
+                        <h3><a href="https://shuoxing98.github.io/" target="_blank">Shuo Xing</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/mingyang.png" alt="Mingyang Wu" class="profile-img">
+                        </div>
+                        <h3><a href="https://myangwu.github.io/" target="_blank">Mingyang Wu</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/shuangyu.png" alt="Shuangyu Xie" class="profile-img">
+                        </div>
+                        <h3><a href="https://ehehee.github.io/" target="_blank">Shuangyu Xie</a></h3>
+                        <p class="affiliation">UC Berkeley</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/kaiyuan.png" alt="Kaiyuan Chen" class="profile-img">
+                        </div>
+                        <h3><a href="https://keplerc.github.io/" target="_blank">Kaiyuan Chen</a></h3>
+                        <p class="affiliation">UC Berkeley</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank">Siyuan Yang</a></h3>
+                        <p class="affiliation"></p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/Chris.png" alt="Chris Wei Zhou" class="profile-img">
+                        </div>
+                        <h3><a href="https://weizhou-geek.github.io/" target="_blank">Chris Wei Zhou</a></h3>
+                        <p class="affiliation">Cardiff University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/sicong.png" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="https://sicongjiang.com/" target="_blank"></a>Sicong Jiang</h3>
+                        <p class="affiliation">Abaka AI</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/lin.png" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="https://dr.ntu.edu.sg/entities/person/Lin-Wang" target="_blank"></a>Lin Wang</h3>
+                        <p class="affiliation">Nanyang Technological University</p>
+                    </div>
+                    <!-- <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank"></a></h3>
+                        <p class="affiliation"></p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank"></a></h3>
+                        <p class="affiliation"></p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/" alt="" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank"></a></h3>
+                        <p class="affiliation"></p>
+                    </div> -->
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/zhengzhong.png" alt="Zhengzhong Tu" class="profile-img">
+                        </div>
+                        <h3><a href="https://vztu.github.io/" target="_blank">Zhengzhong Tu</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2>Workshop Schedule</h2>
+                <div class="schedule-timeline">
+                    <div class="timeline-item">
+                        <div class="time">One-Day</div>
+                        <div class="event">Schedule TBD</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="submission" class="section bg-light animate">
+            <div class="container">
+                <h2>Paper Submission</h2>
+                <div class="submission-info">
+                    <div class="submission-details">
+                        <table class="important-dates-table">
+                            <tbody>
+                            <tr>
+                                <td class="event-col"><strong>Submissions Due</strong></td>
+                                <td class="date-col">TBD</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col"><strong>Author Notification</strong></td>
+                                <td class="date-col">TBD</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col"><strong>Camera-Ready Due</strong></td>
+                                <td class="date-col">TBD</td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="submission-guidelines">
+                        <h3>Submission Guidelines</h3>
+                        <p>We welcome the following types of submissions:</p>
+                </div>
+        </section>
+
+        <!-- <section id="oral-papers" class="section">
+            <div class="container">
+                <h2><span class="section-icon"></span>Oral Papers</h2>
+                <ul class="paper-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="poster-papers" class="section bg-light">
+            <div class="container">
+                <h2><span class="section-icon"></span>Poster Papers</h2>
+                <ul class="paper-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="area-chairs" class="section">
+            <div class="container">
+                <h2><span class="section-icon"></span>Area Chairs</h2>
+                <ul class="committee-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="reviewers" class="section bg-light">
+            <div class="container">
+                <h2><span class="section-icon"></span>Reviewers</h2>
+                <ul class="committee-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: video.quality.evaluator@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; VGBE Worksop@CVPR2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
