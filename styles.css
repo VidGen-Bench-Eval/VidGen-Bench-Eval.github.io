@@ -22,6 +22,7 @@
 }
 
 body {
+    /* font-family: 'Exo 2', sans-serif; */
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
@@ -166,6 +167,8 @@ body {
 .cta-primary {
     background-color: var(--white);
     color: var(--primary-color);
+    display: inline-block;
+    padding: 1rem 1.5rem 0.5rem;
 }
 
 .cta-secondary {
