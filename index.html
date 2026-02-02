@@ -2,19 +2,18 @@
 <!-- Based on the source code from The First Workshop on Short-Form Video Understanding: The Next Frontier in Video Intelligence (ICCV 2025) -->
 <!-- Source: https://short-form-video-understanding.github.io/ -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-        name="viewport"
-        content="initial-scale=1.0, user-scalable=no, width=device-width"
-    />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
     <title>VGBE@CVPR2026</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Ensure the map container fills its section */
@@ -26,18 +25,20 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#topics">Topics</a></li>
+                <li><a href="#challenges">Challenges</a></li>
                 <li><a href="#speakers">Speakers</a></li>
                 <li><a href="#organizers">Organizers</a></li>
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#submission">Submission</a></li>
-                <!-- <li><a href="#oral-papers">Accepted Papers</a></li> -->
-                <!-- <li><a href="#area-chairs">Program Committee</a></li> -->
+                <!-- <li><a href="#oral-papers">Accepted Papers</a></li> 
+                <li><a href="#area-chairs">Program Committee</a></li> -->
             </ul>
         </nav>
     </header>
@@ -47,12 +48,14 @@
                 <h1>The First Workshop on</h1>
                 <h1>Video Generative Models: Benchmarks and Evaluation</h1>
                 <h2>CVPR 2026</h2>
-                <p class="hero-subtitle">Exploring Challenges and Opportunities in Evaluating and Benchmarking Video Generative Models</p>
-                <p class="hero-subtitle">Jun 03, 2026</p>
+                <p class="hero-subtitle">Exploring Challenges and Opportunities in Evaluating and Benchmarking Video
+                    Generative Models</p>
+                <p class="hero-subtitle">(TBD) June 3–7, 2026</p>
                 <p class="hero-subtitle">Denver, Colorado, United States</p>
                 <div class="cta-buttons">
-                    <a href="#submission" class="cta-primary">Submit Paper</a>
-                    <a href="#about" class="cta-secondary">Learn More</a>
+                    <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VGBE" target="_blank" rel="noopener noreferrer" class="cta-primary">Submit Paper</a>
+                    <a href="#submission" class="cta-primary">Submit Instruction</a>
+                    <a href="#about" class="cta-primary">Learn More</a>
                 </div>
             </div>
         </section>
@@ -61,44 +64,148 @@
             <div class="container">
                 <h2>About the Workshop</h2>
                 <p>
-                    Recent progress in video generative models necessitates the development of robust evaluation methods to assess their instruction following, physical realism, human fidelity, and creativity. Existing metrics and current benchmarks are often limited, focusing primarily on semantic alignment while failing to capture crucial imperfections such as structural inconsistencies, unnatural motion, and weak temporal coherence that plague even state-of-the-art generators. 
+                    The rapid advancement of video generative models underscores the critical need for robust evaluation
+                    methodologies capable of rigorously assessing instruction adherence, physical plausibility, human
+                    fidelity, and creativity. However, prevailing metrics and benchmarks remain constrained,
+                    predominantly prioritizing semantic alignment while often overlooking subtle yet critical artifacts,
+                    such as structural distortions, unnatural motion dynamics, and weak temporal coherence, that persist
+                    even in state-of-the-art systems.
                     <br><br>
-                    Therefore, the VGBE workshop aims to explore next-generation video evaluators that are fine-grained, physics plausible, and human-aligned, serving as comprehensive video assessment frameworks capable of reflecting real-world dynamics and identifying subtle imperfections across diverse video generation domains. The workshop further seeks to establish multi-dimensional, explainable, and physically grounded evaluation methodologies that enable reliable, standardized benchmarks, so as to facilitating the development of video generative models and supporting their practical deployment in real-world applications.</p>
+                    Therefore, the VGBE workshop seeks to pioneer next-generation evaluation methodologies characterized
+                    by fine-grained granularity, physical grounding, and alignment with human perception.
+                    By establishing multi-dimensional, explainable, and standardized benchmarks, we aim to bridge the
+                    gap between generation and assessment, thereby accelerating the maturation of video generative
+                    models and facilitating their reliable deployment in real-world applications.
+                </p>
             </div>
         </section>
 
         <section id="topics" class="section bg-light">
             <div class="container">
                 <h2>Topics of Interest</h2>
-                <p>We invite submissions on the following topics but are not limited to:</p>
+                <p>We invite contributions on (but not limited to):</p>
                 <br>
                 <div class="topics-grid">
+                    
                     <div class="topic-card">
                         <h3>Novel Metrics and Evaluation Methods</h3>
                         <ul>
-                            <!-- <li></li> -->
-                        </ul>                
+                            <li><strong>Spatiotemporal & Causal Integrity:</strong> Quantifying motion realism, object permanence, and causal logic consistency over time.</li>
+                            <li><strong>Perceptual Quality Assessment:</strong> Learning-based metrics for detecting visual artifacts, hallucinations, and alignment with human subjectivity.</li>
+                            <li><strong>Explainable Automated Judges:</strong> Leveraging Multimodal LLMs (VLMs) for scalable, fine-grained, and interpretable critique.</li>
+                            <li><strong>Instruction Adherence Metrics:</strong> Rigorous evaluation of prompt fidelity, spatial conditioning, and complex constraint satisfaction.</li>
+                        </ul>
                     </div>
+        
                     <div class="topic-card">
                         <h3>Datasets and Benchmarks</h3>
                         <ul>
-                            <!-- <li></li> -->
-                        </ul>   
+                            <li><strong>Narrative & Multi-Shot Suites:</strong> Curated datasets assessing character persistence, scene transitions, and long-horizon consistency.</li>
+                            <li><strong>Physics-Grounded Challenge Sets:</strong> Scenarios isolating fluid dynamics, collisions, and kinematic anomalies to stress-test "World Simulators."</li>
+                            <li><strong>Human Preference Data:</strong> Large-scale, fine-grained annotations capturing multi-dimensional judgments (e.g., aesthetics vs. realism).</li>
+                            <li><strong>Standardized Protocols:</strong> Unified data splits and reproducible frameworks to ensure transparent and comparable benchmarking.</li>
+                        </ul>
                     </div>
+        
                     <div class="topic-card">
-                        <!-- <h3>New Research Frontiers<br>in Visual Evaluation</h3> -->
                         <h3>Developing video generative applications in vertical domains</h3>
                         <ul>
-                            <!-- <li></li> -->
-                        </ul>   
+                            <li><strong>Domain Adaptation & Personalization:</strong> Efficient fine-tuning and Low-Rank Adaptation (LoRA) strategies for specialized verticals (e.g., medical, cinematic).</li>
+                            <li><strong>Simulation for Embodied AI:</strong> Leveraging video generative models as world simulators for robotics perception, planning, and Sim2Real transfer.</li>
+                            <li><strong>Interactive & Human-in-the-Loop:</strong> User-centric frameworks incorporating iterative feedback for creative workflows and gaming.</li>
+                            <li><strong>Immersive 4D Generation:</strong> Lifting video diffusion priors to synthesize spatially consistent scenes and dynamic assets for AR/VR environments.</li>
+                            <li><strong>Deployment Efficiency:</strong> Optimizing inference latency, memory footprint, and cost for scalable industrial applications.</li>
+                        </ul>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="section section-challenge">
+            <div class="container">
+                <h2>VGBE 2026 Challenges</h2>
+                <p class="challenge-lead">
+                    Submissions will be evaluated on the test set using the metrics defined in the associated paper, with human evaluation conducted for each task as needed.
+                </p>
+                
+                <div class="timeline-card">
+                    <div class="card-header-simple">
+                        <h4>Competition Timeline</h4>
+                    </div>
+                    <table class="important-dates-table compact-dates-table">
+                        <tbody>
+                            <tr>
+                                <td class="event-col">Competition starts</td>
+                                <td class="date-col">TBD (Target: February 16, 2026)</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col">Initial results release</td>
+                                <td class="date-col">TBD (Target: March 20, 2026)</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col">Submission deadline</td>
+                                <td class="date-col">TBD (Target: April 12, 2026)</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col">Challenge paper deadline</td>
+                                <td class="date-col">TBD (Target: April 19, 2026)</td>
+                            </tr>
+                            <tr>
+                                <td class="event-col">Final results and winners announced</td>
+                                <td class="date-col">TBD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="paper-tracks-grid">
+                    <div class="paper-track-card">
+                        <div class="card-header-simple">
+                            <h4>Image-to-Video Generation Challenge</h4>
+                        </div>
+                        <ul class="track-details-list">
+                            <li>
+                                <span class="detail-label">Objective (To be updated):</span>
+                                <span class="detail-value">
+                                    Evaluate the model's ability to synthesize high-fidelity videos given a <strong>text prompt</strong> and a <strong>input image</strong>. The focus is on measuring prompt following capabilities (instruction adherence) and the visual fidelity / realism of the generated videos.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Protocol:</span>
+                                <span class="detail-value">
+                                    A subset of test samples will be released in Phase 1. Participants are required to submit <strong>model checkpoints</strong> and <strong>inference code</strong>. Final rankings will be determined by a combination of automated metrics and rigorous human evaluation.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="paper-track-card">
+                        <div class="card-header-simple">
+                            <h4>Instruction-Guided Video Editing Challenge</h4>
+                        </div>
+                        <ul class="track-details-list">
+                            <li>
+                                <span class="detail-label">Objective (To be updated):</span>
+                                <span class="detail-value">
+                                    Assess the model's precision in performing various editing tasks on a given input video. Key criteria include the accuracy of the edit according to the instruction and the preservation of temporal consistency in unedited regions.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="detail-label">Protocol:</span>
+                                <span class="detail-value">
+                                     A subset of test samples will be released in Phase 1. Participants are required to submit <strong>model checkpoints</strong> and <strong>inference code</strong>. Performance will be evaluated via automated consistency metrics and human preference studies.
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="speakers" class="section">
+        <section id="speakers" class="section bg-light animate">
             <div class="container">
-                <h2>Keynote Speakers</h2>
+                <h2>Keynote Speakers (Tentative)</h2>
                 <div class="speakers-grid">
                     <div class="speaker-card">
                         <div class="profile-image">
@@ -160,7 +267,7 @@
             </div>
         </section>
 
-        <section id="organizers" class="section bg-light">
+        <section id="organizers" class="section">
             <div class="container">
                 <h2>Organizers</h2>
                 <div class="organizers-grid">
@@ -238,28 +345,32 @@
                         <div class="profile-image">
                             <img src="assets/jinyu.png" alt="Jinyu Zhao" class="profile-img">
                         </div>
-                        <h3><a href="https://www.linkedin.com/in/jinyu-fischer-zhao-12b872139/" target="_blank">Jinyu Zhao</a></h3>
+                        <h3><a href="https://www.linkedin.com/in/jinyu-fischer-zhao-12b872139/" target="_blank">Jinyu
+                                Zhao</a></h3>
                         <p class="affiliation">eBay</p>
                     </div>
                     <div class="organizer-card">
                         <div class="profile-image">
                             <img src="assets/Ashirbad.png" alt="Ashirbad Mishra" class="profile-img">
                         </div>
-                        <h3><a href="https://www.linkedin.com/in/ashirbad-mishra/" target="_blank">Ashirbad Mishra</a></h3>
+                        <h3><a href="https://www.linkedin.com/in/ashirbad-mishra/" target="_blank">Ashirbad Mishra</a>
+                        </h3>
                         <p class="affiliation">eBay</p>
                     </div>
                     <div class="organizer-card">
                         <div class="profile-image">
                             <img src="assets/soumik.png" alt="Soumik Dey" class="profile-img">
                         </div>
-                        <h3><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en" target="_blank">Soumik Dey</a></h3>
+                        <h3><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en"
+                                target="_blank">Soumik Dey</a></h3>
                         <p class="affiliation">eBay</p>
                     </div>
                     <div class="organizer-card">
                         <div class="profile-image">
                             <img src="assets/yilin.png" alt="Yilin Wang" class="profile-img">
                         </div>
-                        <h3><a href="https://scholar.google.com/citations?user=F-MBaYIAAAAJ&hl=en" target="_blank">Yilin Wang</a></h3>
+                        <h3><a href="https://scholar.google.com/citations?user=F-MBaYIAAAAJ&hl=en" target="_blank">Yilin
+                                Wang</a></h3>
                         <p class="affiliation">Google/YouTube</p>
                     </div>
                     <div class="organizer-card">
@@ -280,42 +391,105 @@
             </div>
         </section>
 
-        <section id="submission" class="section">
+        <section id="submission" class="section bg-light animate">
             <div class="container">
                 <h2>Paper Submission</h2>
-                <div class="submission-info">
-                    <div class="submission-details">
+
+                <div class="submission-info-container">
+                    <div class="info-block dates-block">
+                        <h3 class="info-block-title">Important Dates</h3>
                         <table class="important-dates-table">
                             <tbody>
-                            <tr>
-                                <td class="event-col"><strong>Submissions Open</strong></td>
-                                <td class="date-col">January 28, 2026 AOE</td>
-                            </tr>
-                            <tr>
-                                <td class="event-col"><strong>Submissions Due</strong></td>
-                                <td class="date-col">March 10, 2026 AOE</td>
-                            </tr>
-                            <tr>
-                                <td class="event-col"><strong>Author Notification</strong></td>
-                                <td class="date-col">TBD</td>
-                            </tr>
-                            <tr>
-                                <td class="event-col"><strong>Camera-Ready Due</strong></td>
-                                <td class="date-col">TBD</td>
-                            </tr>
-                        </tbody></table>
+                                <tr>
+                                    <td class="event-col">Submissions Open</td>
+                                    <td class="date-col">January 28, 2026 AOE</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Submissions Due</td>
+                                    <td class="date-col">March 10, 2026 AOE</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Author Notification</td>
+                                    <td class="date-col">TBD</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Camera-Ready Due</td>
+                                    <td class="date-col">TBD</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="submission-guidelines">
-                        <h3>Submission Guidelines</h3>
-                        <p>We welcome the following types of submissions: short papers (2-4 pages), and full papers (5-8 pages).</p>
-                        <br>
-                        <p>All submissions should follow the <a href="https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines" target="_blank">CVPR 2026 author guidelines</a>.</p>
-                        <br>
-                        <p><b>Submission Portal: </b><a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VGBE" target="_blank">OpenReview</a></p>
+
+                    <div class="info-block guidelines-block">
+                        <h3 class="info-block-title">Submission Guidelines</h3>
+                        <div class="guidelines-content">
+                            <p>We welcome the following types of submissions: short papers (2–4 pages), and full papers (5–8 pages). All submissions should follow the <a href="https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines" target="_blank">CVPR 2026 author guidelines</a>.</p>
+                        </div>
+                        <div class="submission-action-area">
+                            <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VGBE" target="_blank" rel="noopener noreferrer" class="cta-primary">
+                                <i class="fa-solid fa-upload"></i> Submit via OpenReview
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="tracks-section">
+                    <h3 class="subsection-title">Paper Tracks</h3>
+                    <div class="paper-tracks-grid">
+                        <div class="paper-track-card">
+                            <div class="card-header-simple">
+                                <h4>Full Papers</h4>
+                            </div>
+                            <ul class="track-details-list">
+                                <li>
+                                    <span class="detail-label">Length:</span>
+                                    <span class="detail-value">Up to 8 pages (excluding references)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Content:</span>
+                                    <span class="detail-value">No appendix or supplementary material in the main PDF</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Proceedings:</span>
+                                    <span class="detail-value">Included in official CVPR proceedings</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Scope:</span>
+                                    <span class="detail-value">Full research contributions</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="paper-track-card">
+                            <div class="card-header-simple">
+                                <h4>Short Papers</h4>
+                            </div>
+                            <ul class="track-details-list">
+                                <li>
+                                    <span class="detail-label">Length:</span>
+                                    <span class="detail-value">Up to 4 pages (excluding references)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Content:</span>
+                                    <span class="detail-value">No appendix or supplementary material in the main PDF</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Proceedings:</span>
+                                    <span class="detail-value">Not included in official proceedings (Archived on website)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Scope:</span>
+                                    <span class="detail-value">Work-in-progress and preliminary results</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <section id="schedule" class="section bg-light animate">
+        <section id="schedule" class="section">
             <div class="container">
                 <h2>Workshop Schedule</h2>
                 <div class="schedule-timeline">
@@ -363,21 +537,22 @@
             </div>
         </section> -->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contacts</h3>
-                    <p>Lead Contacts: Shuo Xing, Mingyang Wu, Zhengzhong Tu</p>
-                    <p>Email: vgbe.cvpr@gmail.com</p>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Contacts</h3>
+                        <p>Lead Contacts: Shuo Xing, Mingyang Wu, Zhengzhong Tu</p>
+                        <p>Email: vgbe.cvpr@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Workshop on Video Generative Models: Benchmarks and Evaluation. All rights reserved.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; VGBE Workshop. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
