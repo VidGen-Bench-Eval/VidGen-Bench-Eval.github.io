@@ -1166,20 +1166,54 @@ a:hover {
 
 .section-challenge .paper-tracks-grid {
     margin-top: 1.2rem;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.section-challenge .paper-track-card {
+    padding: 1.3rem 1.35rem;
+}
+
+.section-challenge .card-header-simple h4 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 .section-challenge .track-details-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
 }
 
 .section-challenge .detail-label {
-    min-width: 0;
+    min-width: auto;
+    margin-right: 0.35rem;
 }
 
 .section-challenge .detail-value {
     color: var(--gray-700);
+    min-width: 0;
+}
+
+.section-challenge .challenge-action-button {
+    display: inline-block;
+    align-self: center;
+    margin-top: 0;
+    padding: 0.56rem 1.05rem;
+    border-radius: 0.6rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.section-challenge .challenge-action-button:hover {
+    background-color: #184e77;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.16);
+    transform: translateY(-1px);
 }
 
 .tracks-section .track-details-list li {
