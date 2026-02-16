@@ -1147,6 +1147,23 @@ a:hover {
     margin: 1.2rem 0 1.6rem;
 }
 
+.section-challenge .sponsor-card {
+    padding-bottom: 1.4rem;
+}
+
+.section-challenge .challenge-sponsor-logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.2rem;
+}
+
+.section-challenge .challenge-sponsor-logo {
+    width: min(100%, 150px);
+    height: auto;
+    display: block;
+}
+
 .section-challenge .paper-tracks-grid {
     margin-top: 1.2rem;
 }
