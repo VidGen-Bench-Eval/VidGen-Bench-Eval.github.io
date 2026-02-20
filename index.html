@@ -29,6 +29,12 @@
 <body>
     <header class="header">
         <nav class="nav-container">
+            <div class="nav-sponsor-strip" aria-label="Sponsors">
+                <img src="assets/ebay.png" alt="eBay logo" class="nav-sponsor-logo">
+                <img src="assets/visko.svg" alt="VISKO logo" class="nav-sponsor-logo">
+                <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="nav-sponsor-logo">
+                <img src="assets/youtube.png" alt="YouTube logo" class="nav-sponsor-logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#topics">Topics</a></li>
@@ -56,7 +62,7 @@
                 <div class="cta-buttons">
                     <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VGBE" target="_blank" rel="noopener noreferrer" class="cta-primary">Submit Paper</a>
                     <a href="#submission" class="cta-primary">Submit Instruction</a>
-                    <a href="#about" class="cta-primary">Learn More</a>
+                    <a href="#challenges" class="cta-primary">Join Challenges</a>
                 </div>
             </div>
         </section>
@@ -135,7 +141,7 @@
                 <div class="paper-tracks-grid">
                     <div class="paper-track-card challenge-track-card">
                         <div class="card-header-simple">
-                            <h4>Image-to-Video Consistent Generation Challenge</h4>
+                            <h4>Image-to-Video Consistent Generation</h4>
                         </div>
                         <div class="challenge-track-body">
                             <div class="challenge-track-details">
@@ -143,7 +149,7 @@
                                     <li>
                                         <span class="detail-label">Objective:</span>
                                         <span class="detail-value">
-                                            The primary objective of this challenge is to propose a video generation method to maintain <strong>visual preservation</strong> and <strong>spatiotemporal consistency</strong> given multimodal inputs (a single reference image and a text prompt).
+                                            Maintain visual preservation and spatiotemporal consistency from an image and text prompt.
                                         </span>
                                     </li>
                                     <!-- <li>
@@ -155,11 +161,10 @@
                                     <li>
                                         <span class="detail-label">Awards:</span>
                                         <div class="detail-value">
-                                            We thank eBay for sponsoring this track with <strong>$1,900 USD</strong>. The current tentative distribution is listed below:
                                             <ul class="award-rank-list">
-                                                <li>🏆 <strong>1st Place (Champion):</strong> $1,000 USD + Award Certificate</li>
-                                                <li>🥈 <strong>2nd Place:</strong> $600 USD + Award Certificate</li>
-                                                <li>🥉 <strong>3rd Place:</strong> $300 USD + Award Certificate</li>
+                                                <li>🏆 <strong>1st Place:</strong> $1,000 + Certificate</li>
+                                                <li>🥈 <strong>2nd Place:</strong> $600 + Certificate</li>
+                                                <li>🥉 <strong>3rd Place:</strong> $300 + Certificate</li>
                                             </ul>
                                         </div>
                                     </li>
@@ -172,37 +177,35 @@
                                 </ul>
                                 <a href="https://www.codabench.org/competitions/14009/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
                             </div>
-                            <div class="timeline-card challenge-inline-timeline">
-                                <div class="card-header-simple">
-                                    <h4>Competition Timeline</h4>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 19, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results and Code Submission deadline</td>
+                                                <td class="date-col">April 01, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <table class="important-dates-table compact-dates-table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="event-col">Competition starts</td>
-                                            <td class="date-col">February 19, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Results and Code Submission deadline</td>
-                                            <td class="date-col">April 01, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Challenge Paper Submission deadline</td>
-                                            <td class="date-col">April 05, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Final results and winners announced</td>
-                                            <td class="date-col">TBD</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/ebay.png" alt="eBay logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-ebay">
+                                </div>
                             </div>
                         </div>
                     </div>
         
                     <div class="paper-track-card challenge-track-card">
                         <div class="card-header-simple">
-                            <h4>Text-conditioned General Video Editing Challenge</h4>
+                            <h4>Text-conditioned General Video Editing</h4>
                         </div>
                         <div class="challenge-track-body">
                             <div class="challenge-track-details">
@@ -210,52 +213,50 @@
                                     <li>
                                         <span class="detail-label">Objective:</span>
                                         <span class="detail-value">
-                                            This challenge targets controllable and high-quality video editing from natural language instructions. Given an input video and a text prompt, participants should submit edited videos that faithfully follow the instructions (100 video-instruction pairs in total).
+                                            Edit input videos from natural language instructions while preserving quality and fidelity.
                                         </span>
                                     </li>
                                     <li>
                                         <span class="detail-label">Awards:</span>
                                         <div class="detail-value">
                                             <ul class="award-rank-list">
-                                                <li>🏆 Highest Score Award</li>
-                                                <li>🌟 Innovation Award</li>
+                                                <li>🏆 <strong>Highest Score Award:</strong> $500 + Certificate</li>
+                                                <li>🌟 <strong>Innovation Award:</strong> $500 + Certificate</li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="timeline-card challenge-inline-timeline">
-                                <div class="card-header-simple">
-                                    <h4>Competition Timeline</h4>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 20, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results Submission deadline</td>
+                                                <td class="date-col">March 25, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <table class="important-dates-table compact-dates-table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="event-col">Challenge release</td>
-                                            <td class="date-col">February 20, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Submission opens</td>
-                                            <td class="date-col">March 15, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Submission deadline</td>
-                                            <td class="date-col">April 20, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Results announcement</td>
-                                            <td class="date-col">May 15, 2026</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-abaka">
+                                </div>
                             </div>
                         </div>
-                        <span class="challenge-action-button challenge-action-disabled">Participate Now</span>
+                        <a href="https://www.codabench.org/competitions/14065/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
                     </div>
 
                     <div class="paper-track-card challenge-track-card">
                         <div class="card-header-simple">
-                            <h4>Environment-aware Video Instance Removal Challenge</h4>
+                            <h4>Environment-aware Video Instance Removal</h4>
                         </div>
                         <div class="challenge-track-body">
                             <div class="challenge-track-details">
@@ -263,58 +264,48 @@
                                     <li>
                                         <span class="detail-label">Objective:</span>
                                         <span class="detail-value">
-                                            Given an input video, a text prompt describing the object to remove, and a segmentation mask of the target object, participants must generate a removal video where the object is removed and the environment is realistically restored.
+                                            Remove target instances and restore realistic environment dynamics with minimal artifacts.
                                         </span>
                                     </li>
                                     <li>
                                         <span class="detail-label">Awards:</span>
                                         <div class="detail-value">
                                             <ul class="award-rank-list">
-                                                <li>🏆 Highest Score Award</li>
-                                                <li>🌟 Innovation Award</li>
+                                                <li>🏆 <strong>Highest Score Award:</strong> $500 + Certificate</li>
+                                                <li>🌟 <strong>Innovation Award:</strong> $500 + Certificate</li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="timeline-card challenge-inline-timeline">
-                                <div class="card-header-simple">
-                                    <h4>Competition Timeline</h4>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 20, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results Submission deadline</td>
+                                                <td class="date-col">March 25, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <table class="important-dates-table compact-dates-table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="event-col">Challenge release</td>
-                                            <td class="date-col">February 20, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Submission opens</td>
-                                            <td class="date-col">March 15, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Submission deadline</td>
-                                            <td class="date-col">April 20, 2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="event-col">Results announcement</td>
-                                            <td class="date-col">May 15, 2026</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-abaka">
+                                </div>
                             </div>
                         </div>
-                        <span class="challenge-action-button challenge-action-disabled">Participate Now</span>
+                        <a href="https://www.codabench.org/competitions/14066/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
                     </div>
                 </div>
 
-                <div class="timeline-card sponsor-card">
-                    <div class="card-header-simple">
-                        <h4>Sponsor</h4>
-                    </div>
-                    <div class="challenge-sponsor-logo-container">
-                        <img src="assets/ebay.png" alt="eBay logo" class="challenge-sponsor-logo">
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -351,7 +342,7 @@
                             <img src="assets/wenhu.jpg" alt="Wenhu Chen" class="profile-img">
                         </div>
                         <h3><a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a></h3>
-                        <p class="affiliation-speaker">University of Waterloo<br>Vector Institute</p>
+                        <p class="affiliation-speaker">University of Waterloo &amp; Meta MSL</p>
                         <p class="title">Assistant Professor</p>
                     </div>
                     <div class="speaker-card">
