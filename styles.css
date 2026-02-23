@@ -289,6 +289,63 @@ body {
     margin-bottom: 1rem;
 }
 
+.workshop-awards-callout {
+    margin: 0.3rem auto 0.1rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid #cde1f1;
+    border-left: 4px solid #1e5f8a;
+    border-radius: 0.9rem;
+    background: linear-gradient(135deg, #f8fcff 0%, #eef6fd 100%);
+}
+
+.workshop-awards-eyebrow {
+    font-weight: 800;
+    color: #13496e;
+    margin-bottom: 0.65rem;
+    font-size: 1rem;
+}
+
+.workshop-awards-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.workshop-award-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #d6e6f4;
+    border-radius: 0.65rem;
+    background: #ffffff;
+    color: #1f3f5a;
+    line-height: 1.25;
+}
+
+.workshop-award-name {
+    font-weight: 800;
+    color: #1d4869;
+}
+
+.workshop-award-join {
+    color: #67829a;
+    font-weight: 700;
+}
+
+.workshop-award-cash {
+    color: #b87800;
+    font-weight: 900;
+    font-size: 1.04rem;
+}
+
+.workshop-awards-note {
+    margin-top: 0.55rem;
+    color: #35566f;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
 /* Organizers Grid */
 .organizers-grid {
     display: grid;
@@ -1339,19 +1396,50 @@ a:hover {
 
 .section-challenge .award-rank-list {
     margin: 0.7rem 0 0;
-    padding-left: 1.2rem;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
 }
 
 .section-challenge .award-rank-list li {
-    display: list-item;
-    margin-left: 0;
-    margin-bottom: 0.35rem;
-    line-height: 1.45;
+    margin: 0;
+    line-height: 1.4;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.42rem 0.58rem;
+    border: 1px solid #e4cfaa;
+    border-radius: 0.55rem;
+    background: linear-gradient(135deg, #fff8ea 0%, #fffdf5 100%);
 }
 
 .section-challenge .award-rank-list li:last-child {
     margin-bottom: 0;
+}
+
+.section-challenge .award-rank-icon {
+    font-size: 0.98rem;
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.section-challenge .award-rank-title {
+    color: #1d4869;
+    font-weight: 800;
+}
+
+.section-challenge .award-rank-cash {
+    color: #b87800;
+    font-weight: 900;
+    font-size: 1.16rem;
+    line-height: 1;
+}
+
+.section-challenge .award-rank-note {
+    color: #3e5368;
+    font-weight: 700;
 }
 
 .section-challenge .challenge-inline-timeline {
@@ -1572,6 +1660,10 @@ a:hover {
 }
 
 @media (max-width: 1024px) {
+    .workshop-awards-row {
+        grid-template-columns: 1fr;
+    }
+
     .section-challenge .challenge-track-body {
         grid-template-columns: 1fr;
         gap: 1rem;
