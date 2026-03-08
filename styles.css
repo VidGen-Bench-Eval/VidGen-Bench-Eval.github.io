@@ -1508,6 +1508,16 @@ a:hover {
     padding-bottom: 0.75rem;
 }
 
+.section-challenge .card-header-simple h4 .challenge-title-link {
+    color: #3f78b8;
+    font-weight: 500;
+    font-size: 0.94em;
+}
+
+.section-challenge .card-header-simple h4 .challenge-title-link:hover {
+    color: #2f5f9d;
+}
+
 .section-challenge .track-details-list li {
     flex-direction: row;
     align-items: baseline;
