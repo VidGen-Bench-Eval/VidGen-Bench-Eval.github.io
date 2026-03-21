@@ -1216,9 +1216,10 @@ a:hover {
 /* Dates Table Styling */
 .dates-block .important-dates-table {
     width: 100%;
-    max-width: 560px;
+    max-width: 620px;
     margin: 0 auto;
     border-collapse: collapse;
+    table-layout: auto;
 }
 
 #submission .important-dates-table td {
