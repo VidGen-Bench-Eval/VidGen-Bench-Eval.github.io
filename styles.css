@@ -3283,6 +3283,20 @@ h4,
     margin-left: 0.22rem;
 }
 
+.nav-brand {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: rgba(17, 17, 17, 0.62);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.nav-brand:hover {
+    color: var(--secondary-color);
+}
+
 .schedule-table-wrap {
     overflow-x: auto;
 }
