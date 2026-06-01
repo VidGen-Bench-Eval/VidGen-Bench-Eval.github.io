@@ -1,3 +1,41 @@
+// Keep visual and anchor order aligned with the page narrative.
+const main = document.querySelector('main');
+[
+    'top',
+    'sponsors',
+    'about',
+    'topics',
+    'schedule',
+    'speakers',
+    'organizers',
+    'challenges',
+    'accepted-papers'
+].forEach(id => {
+    const section = document.getElementById(id);
+    if (main && section) {
+        main.appendChild(section);
+    }
+});
+
+const footer = document.querySelector('.footer');
+if (main && footer) {
+    main.appendChild(footer);
+}
+
+const scrollToHashTarget = () => {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+    const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'auto' });
+};
+
+requestAnimationFrame(scrollToHashTarget);
+window.addEventListener('load', () => {
+    setTimeout(scrollToHashTarget, 50);
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -77,13 +115,13 @@ const createMobileMenu = () => {
 };
 
 // Initialize mobile menu if screen width is small
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 900) {
     createMobileMenu();
 }
 
 // Update mobile menu on window resize
 window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-button')) {
+    if (window.innerWidth <= 900 && !document.querySelector('.mobile-menu-button')) {
         createMobileMenu();
     }
 }); 
