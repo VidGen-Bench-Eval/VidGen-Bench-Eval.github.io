@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- Based on the source code from The First Workshop on Short-Form Video Understanding: The Next Frontier in Video Intelligence (ICCV 2025) -->
+<!-- Source: https://short-form-video-understanding.github.io/ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+    <title>Workshop on Video Generative Models: Benchmarks and Evaluation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Ensure the map container fills its section */
+        #map-container {
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a class="nav-brand" href="#top" aria-label="VGBE home">VGBE @ CVPR 2026</a>
+            <div class="nav-sponsor-strip" aria-label="Sponsors">
+                <img src="assets/ebay.png" alt="eBay logo" class="nav-sponsor-logo">
+                <img src="assets/visko.svg" alt="VISKO logo" class="nav-sponsor-logo">
+                <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="nav-sponsor-logo">
+                <img src="assets/youtube.png" alt="YouTube logo" class="nav-sponsor-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#accepted-papers">Papers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <!-- <li><a href="#area-chairs">Program Committee</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="top" class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker">June 4th / CVPR 2026 / Denver</p>
+                <h1>The First Workshop on</h1>
+                <h1 class="hero-title-main">
+                    <span>Video</span>
+                    <span>Generative</span>
+                    <span>Models:</span>
+                    <span>Benchmarks</span>
+                    <span>and Evaluation</span>
+                </h1>
+                <h2></h2>
+                <p class="hero-subtitle hero-tagline">
+                    Exploring Challenges and Opportunities in Evaluating and Benchmarking Video Generative Models
+                </p>
+                <p class="hero-subtitle">Thursday, June 4th, 2026 at 9:00 AM.</p>
+                <p class="hero-subtitle">Mile High 3B, Colorado Convention Center</p>
+                <div class="cta-buttons">
+                    <a href="#schedule" class="cta-primary cta-glow">Schedule</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sponsors" class="hero-sponsors" aria-labelledby="sponsors-title">
+            <div class="container">
+                <p id="sponsors-title" class="sponsors-eyebrow">Supported by</p>
+                <div class="sponsor-logo-grid">
+                    <a class="sponsor-logo-tile" href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer" aria-label="eBay">
+                        <img src="assets/ebay.png" alt="eBay logo">
+                    </a>
+                    <a class="sponsor-logo-tile" href="https://visko.ai/" target="_blank" rel="noopener noreferrer" aria-label="VISKO">
+                        <img src="assets/visko.svg" alt="VISKO logo">
+                    </a>
+                    <a class="sponsor-logo-tile" href="https://abaka.ai/" target="_blank" rel="noopener noreferrer" aria-label="Abaka AI">
+                        <img src="assets/abaka_ai.png" alt="Abaka AI logo">
+                    </a>
+                    <a class="sponsor-logo-tile" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <img src="assets/youtube.png" alt="YouTube logo">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <p>
+                    The rapid advancement of video generative models underscores the critical need for robust evaluation
+                    methodologies capable of rigorously assessing instruction adherence, physical plausibility, human
+                    fidelity, and creativity. However, prevailing metrics and benchmarks remain constrained,
+                    predominantly prioritizing semantic alignment while often overlooking subtle yet critical artifacts,
+                    such as structural distortions, unnatural motion dynamics, and weak temporal coherence, that persist
+                    even in state-of-the-art systems.
+                </p>
+                <p>
+                    Therefore, the VGBE workshop seeks to pioneer next-generation evaluation methodologies characterized
+                    by fine-grained granularity, physical grounding, and alignment with human perception.
+                    By establishing multi-dimensional, explainable, and standardized benchmarks, we aim to bridge the
+                    gap between generation and assessment, thereby accelerating the maturation of video generative
+                    models and facilitating their reliable deployment in real-world applications.
+                </p>
+            </div>
+        </section>
+
+        <section id="topics" class="section bg-light">
+            <div class="container">
+                <h2>Topics</h2>
+                <div class="workshop-awards-callout">
+                    <p class="workshop-awards-eyebrow">🏆 Workshop Paper Awards</p>
+                    <div class="workshop-awards-row">
+                        <div class="workshop-award-chip">
+                            <span class="workshop-award-name">Best Paper Award</span>
+                            <span class="workshop-award-join">+</span>
+                            <span class="workshop-award-cash">$400</span>
+                        </div>
+                        <div class="workshop-award-chip">
+                            <span class="workshop-award-name">Best Paper Runner-Up Award</span>
+                            <span class="workshop-award-join">+</span>
+                            <span class="workshop-award-cash">$300</span>
+                        </div>
+                    </div>
+                    <p class="workshop-awards-note">Recognizing outstanding contributions in workshop paper submissions.</p>
+                </div>
+                <br>
+                <!-- <p>We invite contributions on (but not limited to):</p> -->
+                <br>
+                <div class="topics-grid">
+                    
+                    <div class="topic-card">
+                        <h3>Novel Metrics and Evaluation Methods</h3>
+                        <ul>
+                            <li><strong>Spatiotemporal & Causal Integrity:</strong> Quantifying motion realism, object permanence, and causal logic consistency over time.</li>
+                            <li><strong>Perceptual Quality Assessment:</strong> Learning-based metrics for detecting visual artifacts, hallucinations, and alignment with human subjectivity.</li>
+                            <li><strong>Explainable Automated Judges:</strong> Leveraging Multimodal LLMs (VLMs) for scalable, fine-grained, and interpretable critique.</li>
+                            <li><strong>Instruction Adherence Metrics:</strong> Rigorous evaluation of prompt fidelity, spatial conditioning, and complex constraint satisfaction.</li>
+                        </ul>
+                    </div>
+        
+                    <div class="topic-card">
+                        <h3>Datasets and Benchmarks</h3>
+                        <ul>
+                            <li><strong>Narrative & Multi-Shot Suites:</strong> Curated datasets assessing character persistence, scene transitions, and long-horizon consistency.</li>
+                            <li><strong>Physics-Grounded Challenge Sets:</strong> Scenarios isolating fluid dynamics, collisions, and kinematic anomalies to stress-test "World Simulators."</li>
+                            <li><strong>Human Preference Data:</strong> Large-scale, fine-grained annotations capturing multi-dimensional judgments (e.g., aesthetics vs. realism).</li>
+                            <li><strong>Standardized Protocols:</strong> Unified data splits and reproducible frameworks to ensure transparent and comparable benchmarking.</li>
+                        </ul>
+                    </div>
+        
+                    <div class="topic-card">
+                        <h3>Developing video generative applications in vertical domains</h3>
+                        <ul>
+                            <li><strong>Domain Adaptation & Personalization:</strong> Efficient fine-tuning and Low-Rank Adaptation (LoRA) strategies for specialized verticals (e.g., medical, cinematic).</li>
+                            <li><strong>Simulation for Embodied AI:</strong> Leveraging video generative models as world simulators for robotics perception, planning, and Sim2Real transfer.</li>
+                            <li><strong>Interactive & Human-in-the-Loop:</strong> User-centric frameworks incorporating iterative feedback for creative workflows and gaming.</li>
+                            <li><strong>Immersive 4D Generation:</strong> Lifting video diffusion priors to synthesize spatially consistent scenes and dynamic assets for AR/VR environments.</li>
+                            <li><strong>Deployment Efficiency:</strong> Optimizing inference latency, memory footprint, and cost for scalable industrial applications.</li>
+                        </ul>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="section section-challenge">
+            <div class="container">
+                <h2>Challenges</h2>
+                <p class="challenge-lead">
+                    Submissions will be evaluated on the test set using the metrics defined in the associated paper, with human evaluation conducted for each task as needed.
+                </p>
+                
+                <div class="paper-tracks-grid">
+                    <div class="paper-track-card challenge-track-card">
+                        <div class="card-header-simple">
+                            <h4>Image-to-Video Consistent Generation</h4>
+                        </div>
+                        <div class="challenge-track-body">
+                            <div class="challenge-track-details">
+                                <ul class="track-details-list">
+                                    <li>
+                                        <span class="detail-label">Objective:</span>
+                                        <span class="detail-value">
+                                            Maintain visual preservation and spatiotemporal consistency from an image and text prompt.
+                                        </span>
+                                    </li>
+                                    <!-- <li>
+                                        <span class="detail-label">Protocol:</span>
+                                        <span class="detail-value">
+                                            A subset of test samples will be released in Phase 1. Participants are required to submit <strong>model checkpoints</strong> and <strong>inference code</strong>. Final rankings will be determined by a combination of automated metrics and rigorous human evaluation.
+                                        </span>
+                                    </li> -->
+                                    <li>
+                                        <span class="detail-label">Awards:</span>
+                                        <div class="detail-value">
+                                            <ul class="award-rank-list">
+                                                <li><span class="award-rank-icon" aria-hidden="true">🏆</span><span class="award-rank-title">1st Place:</span><span class="award-rank-cash">$1,000</span><span class="award-rank-note">+ Certificate</span></li>
+                                                <li><span class="award-rank-icon" aria-hidden="true">🥈</span><span class="award-rank-title">2nd Place:</span><span class="award-rank-cash">$600</span><span class="award-rank-note">+ Certificate</span></li>
+                                                <li><span class="award-rank-icon" aria-hidden="true">🥉</span><span class="award-rank-title">3rd Place:</span><span class="award-rank-cash">$300</span><span class="award-rank-note">+ Certificate</span></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="detail-label">Data Usage:</span>
+                                        <span class="detail-value">
+                                            Please follow the <a href="https://github.com/VidGen-Bench-Eval/VidGen-Bench-Eval.github.io/blob/main/data/LICENSE.md" target="_blank" rel="noopener noreferrer"><strong>Dataset License</strong></a> for data access and usage.
+                                        </span>
+                                    </li>
+                                </ul>
+                                <a href="https://www.codabench.org/competitions/14009/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
+                            </div>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 19, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col"><s>Results and Code Submission deadline</s></td>
+                                                <td class="date-col"><s>April 01, 2026</s></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results and Code Submission deadline</td>
+                                                <td class="date-col">April 05, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/ebay.png" alt="eBay logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-ebay">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="paper-track-card challenge-track-card">
+                        <div class="card-header-simple">
+                            <h4>
+                                Generic Instructional Video Editing
+                                | <a href="https://xiangbogaobarry.github.io/GIVE-CVPR-VGBE-2026/" target="_blank" rel="noopener noreferrer" class="challenge-title-link">Website (for more detailed)</a>
+                            </h4>
+                        </div>
+                        <div class="challenge-track-body">
+                            <div class="challenge-track-details">
+                                <ul class="track-details-list">
+                                    <li>
+                                        <span class="detail-label">Objective:</span>
+                                        <span class="detail-value">
+                                            Edit input videos from natural language instructions while preserving quality and fidelity.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="detail-label">Awards:</span>
+                                        <div class="detail-value">
+                                            <ul class="award-rank-list">
+                                                <li><span class="award-rank-icon" aria-hidden="true">🏆</span><span class="award-rank-title">Highest Score Award:</span><span class="award-rank-cash">$500</span><span class="award-rank-note">+ Certificate</span></li>
+                                                <li><span class="award-rank-icon" aria-hidden="true">🌟</span><span class="award-rank-title">Innovation Award:</span><span class="award-rank-cash">$500</span><span class="award-rank-note">+ Certificate</span></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 20, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col"><s>Results Submission deadline</s></td>
+                                                <td class="date-col"><s>March 25, 2026</s></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results Submission deadline</td>
+                                                <td class="date-col">April 05, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-abaka">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codabench.org/competitions/14065/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
+                    </div>
+
+                    <div class="paper-track-card challenge-track-card">
+                        <div class="card-header-simple">
+                            <h4>
+                                Physics-aware Video Instance Removal
+                                | <a href="https://xiangbogaobarry.github.io/PVIX-CVPR-VGBE-2026/" target="_blank" rel="noopener noreferrer" class="challenge-title-link">Website (for more detailed)</a>
+                            </h4>
+                        </div>
+                        <div class="challenge-track-body">
+                            <div class="challenge-track-details">
+                                <ul class="track-details-list">
+                                    <li>
+                                        <span class="detail-label">Objective:</span>
+                                        <span class="detail-value">
+                                            Remove target instances and restore realistic environment dynamics with minimal artifacts.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="detail-label">Awards:</span>
+                                        <div class="detail-value">
+                                            <ul class="award-rank-list">
+                                                <li><span class="award-rank-icon" aria-hidden="true">🏆</span><span class="award-rank-title">Highest Score Award:</span><span class="award-rank-cash">$500</span><span class="award-rank-note">+ Certificate</span></li>
+                                                <li><span class="award-rank-icon" aria-hidden="true">🌟</span><span class="award-rank-title">Innovation Award:</span><span class="award-rank-cash">$500</span><span class="award-rank-note">+ Certificate</span></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="challenge-side-column">
+                                <div class="timeline-card challenge-inline-timeline">
+                                    <div class="card-header-simple">
+                                        <h4>Competition Timeline</h4>
+                                    </div>
+                                    <table class="important-dates-table compact-dates-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="event-col">Competition starts</td>
+                                                <td class="date-col">February 20, 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col"><s>Results Submission deadline</s></td>
+                                                <td class="date-col"><s>March 25, 2026</s></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="event-col">Results Submission deadline</td>
+                                                <td class="date-col">April 05, 2026</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="challenge-side-sponsor">
+                                    <span class="detail-label">Sponsor:</span>
+                                    <img src="assets/abaka_ai.png" alt="Abaka AI logo" class="challenge-side-sponsor-logo challenge-side-sponsor-logo-abaka">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.codabench.org/competitions/14066/" target="_blank" rel="noopener noreferrer" class="challenge-action-button">Participate Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="speakers" class="section bg-light animate">
+            <div class="container">
+                <h2>Keynote Speakers</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/alan.png" alt="Alan Bovik" class="profile-img">
+                        </div>
+                        <h3><a href="https://www.colorado.edu/ecee/al-bovik" target="_blank">Alan Bovik</a></h3>
+                        <p class="affiliation-speaker">University of Colorado Boulder</p>
+                        <p class="title">Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/minghsuan.jpg" alt="Ming-Hsuan Yang" class="profile-img">
+                        </div>
+                        <h3><a href="https://faculty.ucmerced.edu/mhyang/" target="_blank">Ming-Hsuan Yang</a></h3>
+                        <p class="affiliation-speaker">UC Merced & Google DeepMind</p>
+                        <p class="title">Professor,<br>Research Scientist</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/jiajun.jpg" alt="Jiajun Wu" class="profile-img">
+                        </div>
+                        <h3><a href="https://jiajunwu.com/" target="_blank">Jiajun Wu</a></h3>
+                        <p class="affiliation-speaker">Stanford University</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/mike.png" alt="Mike Zheng Shou" class="profile-img">
+                        </div>
+                        <h3><a href="https://sites.google.com/view/showlab" target="_blank">Mike Zheng Shou</a></h3>
+                        <p class="affiliation-speaker">National University of Singapore</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/yan.png" alt="Yan Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://yanwang.org/" target="_blank">Yan Wang</a></h3>
+                        <p class="affiliation-speaker">NVIDIA Research</p>
+                        <p class="title">Research Scientist,<br>Tech Lead</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/zhuang.png" alt="Zhuang Liu" class="profile-img">
+                        </div>
+                        <h3><a href="https://liuzhuang13.github.io/" target="_blank">Zhuang Liu</a></h3>
+                        <p class="affiliation-speaker">Princeton University</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/yaoyao.jpeg" alt="Yaoyao Liu" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank">Yaoyao Liu</a></h3>
+                        <p class="affiliation-speaker">University of Illinois Urbana-Champaign</p>
+                        <p class="title">Assistant Professor</p>
+                    </div>
+                    <!-- <div class="speaker-card">
+                        <div class="profile-image">
+                            <img src="assets/profile_lin.png" alt="Fangzhou Lin" class="profile-img">
+                        </div>
+                        <h3><a href="https://ark1234.github.io/" target="_blank">Fangzhou Lin</a></h3>
+                        <p class="affiliation-speaker">Texas A&M University, Worcester Polytechnic Institute</p>
+                        <p class="title">Research Associate</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="organizers" class="section">
+            <div class="container-wide">
+                <h2>Organizers</h2>
+                <!-- <h3 class="subsection-title organizers-subtitle">Workshop Organizers</h3> -->
+                <div class="organizers-grid">
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/shuoxing.jpg" alt="Shuo Xing" class="profile-img">
+                        </div>
+                        <h3><a href="https://shuoxing98.github.io/" target="_blank">Shuo Xing</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/mingyang.png" alt="Mingyang Wu" class="profile-img">
+                        </div>
+                        <h3><a href="https://myangwu.github.io/" target="_blank">Mingyang Wu</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/siyuan.png" alt="Siyuan Yang" class="profile-img">
+                        </div>
+                        <h3><a href="https://reed-yang.github.io/" target="_blank">Siyuan Yang</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/shuangyu.png" alt="Shuangyu Xie" class="profile-img">
+                        </div>
+                        <h3><a href="https://ehehee.github.io/" target="_blank">Shuangyu Xie</a></h3>
+                        <p class="affiliation">UC Berkeley</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/kaiyuan.png" alt="Kaiyuan Chen" class="profile-img">
+                        </div>
+                        <h3><a href="https://keplerc.github.io/" target="_blank">Kaiyuan Chen</a></h3>
+                        <p class="affiliation">UC Berkeley</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/xiangbo.webp" alt="Xiangbo Gao" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank">Xiangbo Gao</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/Chris.png" alt="Chris Wei Zhou" class="profile-img">
+                        </div>
+                        <h3><a href="https://weizhou-geek.github.io/" target="_blank">Chris Wei Zhou</a></h3>
+                        <p class="affiliation">Cardiff University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/sicong.png" alt="Sicong Jiang" class="profile-img">
+                        </div>
+                        <h3><a href="https://sicongjiang.com/" target="_blank">Sicong Jiang</a></h3>
+                        <p class="affiliation">McGill University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/zihan.png" alt="Zihan Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://www.linkedin.com/in/zihanwanghms/" target="_blank">Zihan Wang</a></h3>
+                        <p class="affiliation">2077AI Research Foundation, Abaka AI</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/jian.png" alt="Jian Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://jianwang-cmu.github.io/" target="_blank">Jian Wang</a></h3>
+                        <p class="affiliation">Snap Research</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/lin.png" alt="Lin Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://dr.ntu.edu.sg/entities/person/Lin-Wang" target="_blank">Lin Wang</a></h3>
+                        <p class="affiliation">Nanyang Technological University</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/jinyu.png" alt="Jinyu Zhao" class="profile-img">
+                        </div>
+                        <h3><a href="https://www.linkedin.com/in/jinyu-fischer-zhao-12b872139/" target="_blank">Jinyu
+                                Zhao</a></h3>
+                        <p class="affiliation">eBay</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/Ashirbad.png" alt="Ashirbad Mishra" class="profile-img">
+                        </div>
+                        <h3><a href="https://www.linkedin.com/in/ashirbad-mishra/" target="_blank">Ashirbad Mishra</a>
+                        </h3>
+                        <p class="affiliation">eBay</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/soumik.png" alt="Soumik Dey" class="profile-img">
+                        </div>
+                        <h3><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en"
+                                target="_blank">Soumik Dey</a></h3>
+                        <p class="affiliation">eBay</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/yilin.png" alt="Yilin Wang" class="profile-img">
+                        </div>
+                        <h3><a href="https://scholar.google.com/citations?user=F-MBaYIAAAAJ&hl=en" target="_blank">Yilin
+                                Wang</a></h3>
+                        <p class="affiliation">Google/YouTube</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/Pooja.png" alt="Pooja Verlani" class="profile-img">
+                        </div>
+                        <h3><a href="https://www.linkedin.com/in/poojaverlani/" target="_blank">Pooja Verlani</a></h3>
+                        <p class="affiliation">Google</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/will.png" alt="Qing Yin" class="profile-img">
+                        </div>
+                        <h3><a href="" target="_blank">Qing Yin</a></h3>
+                        <p class="affiliation">Visko Platform</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="profile-image">
+                            <img src="assets/zhengzhong.png" alt="Zhengzhong Tu" class="profile-img">
+                        </div>
+                        <h3><a href="https://vztu.github.io/" target="_blank">Zhengzhong Tu</a></h3>
+                        <p class="affiliation">Texas A&M University</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Paper submission section paused.
+        <section id="submission" class="section bg-light animate">
+            <div class="container">
+                <h2>Paper Submission</h2>
+
+                <div class="submission-info-container submission-info-grid">
+                    <div class="info-block info-card dates-block">
+                        <h3 class="info-block-title"><i class="fa-regular fa-calendar"></i> Important Dates</h3>
+                        <table class="important-dates-table">
+                            <tbody>
+                                <tr>
+                                    <td class="event-col">Submissions Open</td>
+                                    <td class="date-col">January 28, 2026, 08:00 AM UTC-0</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Submissions Deadline</td>
+                                    <td class="date-col">March 10, 2026, 11:59 PM UTC-0</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Author Notification</td>
+                                    <td class="date-col">March 23, 2026, 11:59 PM UTC-0</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Camera-Ready Submission Open</td>
+                                    <td class="date-col">March 30, 2026</td>
+                                </tr>
+                                <tr>
+                                    <td class="event-col">Camera-Ready Deadline</td>
+                                    <td class="date-col">April 10, 2026, 11:59 PM PDT</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-block info-card guidelines-block">
+                        <h3 class="info-block-title"><i class="fa-regular fa-file-lines"></i> Submission Guidelines</h3>
+                        <div class="guidelines-content">
+                            <p>We welcome the following types of submissions: short papers (2–4 pages), and full papers (5–8 pages). All submissions should follow the <a href="https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines" target="_blank">CVPR 2026 author guidelines</a>.</p>
+                        </div>
+                        <div class="submission-action-area">
+                            <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VGBE" target="_blank" rel="noopener noreferrer" class="cta-primary submission-cta">
+                                <i class="fa-solid fa-upload"></i> Submit via OpenReview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tracks-section">
+                    <h3 class="subsection-title">Paper Tracks</h3>
+                    <div class="paper-tracks-grid">
+                        <div class="paper-track-card">
+                            <div class="card-header-simple">
+                                <h4>Full Papers</h4>
+                            </div>
+                            <ul class="track-details-list">
+                                <li>
+                                    <span class="detail-label">Length:</span>
+                                    <span class="detail-value">Up to 8 pages (excluding references)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Content:</span>
+                                    <span class="detail-value">No appendix or supplementary material in the main PDF</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Proceedings:</span>
+                                    <span class="detail-value">Included in official CVPR proceedings</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Scope:</span>
+                                    <span class="detail-value">Full research contributions</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="paper-track-card">
+                            <div class="card-header-simple">
+                                <h4>Short Papers</h4>
+                            </div>
+                            <ul class="track-details-list">
+                                <li>
+                                    <span class="detail-label">Length:</span>
+                                    <span class="detail-value">Up to 4 pages (excluding references)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Content:</span>
+                                    <span class="detail-value">No appendix or supplementary material in the main PDF</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Proceedings:</span>
+                                    <span class="detail-value">Not included in official proceedings (Archived on website)</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Scope:</span>
+                                    <span class="detail-value">Work-in-progress and preliminary results</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        -->
+
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2>Schedule</h2>
+                <div class="schedule-board">
+                    <div class="schedule-meta" aria-label="Workshop schedule details">
+                        <span>Date: <strong>Thursday, June 4, 2026</strong></span>
+                        <span>Location: <strong>Colorado Convention Center, Mile High 3B</strong></span>
+                        <span>Virtual Link: <strong>TBD</strong></span>
+                    </div>
+                    <div class="schedule-table-wrap">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Session</th>
+                                    <th>Speaker / Host</th>
+                                    <th>Topic / Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="schedule-time">9:00 - 9:10 AM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Morning Opening</strong></td>
+                                    <td><span class="host-pill">Organizing Committee</span></td>
+                                    <td>Welcome &amp; Workshop Overview</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">9:10 - 9:25 AM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>Inferring Dynamic Physical Properties from Video Foundation Models</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">9:30 - 10:00 AM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/mike.png" alt="Mike Zheng Shou">
+                                            <strong>Mike Shou</strong>
+                                        </div>
+                                    </td>
+                                    <td>Video World Model for Robot Learning</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">10:00 - 10:30 AM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/yan.png" alt="Yan Wang">
+                                            <strong>Yan Wang</strong>
+                                        </div>
+                                    </td>
+                                    <td>Alpamayo: Advancing Autonomous Driving With Reasoning VLA Models</td>
+                                </tr>
+                                <tr class="schedule-break">
+                                    <td class="schedule-time">10:30 - 10:50 AM</td>
+                                    <td><span class="session-dot break"></span><strong>Coffee Break</strong></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">10:50 - 11:20 AM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/yaoyao.jpeg" alt="Yaoyao Liu">
+                                            <strong>Yaoyao Liu</strong>
+                                        </div>
+                                    </td>
+                                    <td>Enable Explicit 3D/4D Controls for Pre-trained Generative Models</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">11:20 - 11:35 AM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>AIGVE-MACS: Unified Multi-Aspect Commenting and Scoring Model for AI-Generated Video Evaluation</td>
+                                </tr>
+                                <tr class="schedule-lunch">
+                                    <td class="schedule-time">11:50 AM - 1:30 PM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Lunch Break</strong></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">1:30 - 1:40 PM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Afternoon Opening</strong></td>
+                                    <td><span class="host-pill">Organizing Committee</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">1:40 - 2:10 PM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/alan.png" alt="Alan Bovik">
+                                            <strong>Alan Bovik</strong>
+                                        </div>
+                                    </td>
+                                    <td>Two Experiments on the Perception of GenAI Pictures</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">2:10 - 2:40 PM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/zhuang.png" alt="Zhuang Liu">
+                                            <strong>Zhuang Liu</strong>
+                                        </div>
+                                    </td>
+                                    <td>Building and Evaluating Fully Open Generative Models</td>
+                                </tr>
+                                <tr class="schedule-break">
+                                    <td class="schedule-time">2:40 - 3:00 PM</td>
+                                    <td><span class="session-dot break"></span><strong>Coffee Break</strong></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">3:00 - 3:30 PM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/minghsuan.jpg" alt="Ming-Hsuan Yang">
+                                            <strong>Ming-Hsuan Yang</strong>
+                                        </div>
+                                    </td>
+                                    <td>Toward World Models: Geometry, View Synthesis, and Visual Reasoning</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">3:30 - 4:00 PM</td>
+                                    <td><span class="session-dot keynote"></span><strong>Keynote</strong></td>
+                                    <td>
+                                        <div class="schedule-person">
+                                            <img src="assets/jiajun.jpg" alt="Jiajun Wu">
+                                            <strong>Jiajun Wu</strong>
+                                        </div>
+                                    </td>
+                                    <td>Open-World Evaluation of Video (World) Models and Beyond</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">4:00 - 4:15 PM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>Physics-Aware Video Instance Removal Benchmark</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">4:15 - 4:30 PM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>Generative Action Tell-Tales: Assessing Human Motion in Synthesized Videos</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">4:30 - 4:45 PM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>Risk-Controllable Multi-View Diffusion for Driving Scenario Generation</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">4:45 - 5:00 PM</td>
+                                    <td><span class="session-dot oral"></span><strong>Oral Presentation</strong></td>
+                                    <td>-</td>
+                                    <td>Distilling Geometry Priors for 3D-Consistent Video Generation</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">5:00 - 5:15 PM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Challenge Winners Ceremony</strong></td>
+                                    <td><span class="host-pill">Organizing Committee</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">5:15 - 5:30 PM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Paper Awards Ceremony</strong></td>
+                                    <td><span class="host-pill">Organizing Committee</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="schedule-time">5:30 - 5:40 PM</td>
+                                    <td><span class="session-dot neutral"></span><strong>Closing Remarks &amp; Group Photo</strong></td>
+                                    <td><span class="host-pill">Organizing Committee</span></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accepted-papers" class="section bg-light">
+            <div class="container">
+                <h2>Accepted Papers</h2>
+                <ol class="accepted-papers-list">
+                    <li>T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation</li>
+                    <li>Distilling Geometry Priors for 3D-Consistent Video Generation</li>
+                    <li>Inferring Dynamic Physical Properties from Video Foundation Models</li>
+                    <li>Physics-Aware Video Instance Removal Benchmark</li>
+                    <li>VideoASMR-Bench: Can AI-Generated ASMR Videos Fool VLMs and Humans?</li>
+                    <li>AIGVE-MACS: Unified Multi-Aspect Commenting and Scoring Model for AI-Generated Video Evaluation</li>
+                    <li>Objects in Generated Videos Are Slower Than They Appear: Models Suffer Sub-Earth Gravity and Don&rsquo;t Know Galileo&rsquo;s Principle&hellip;for now</li>
+                    <li>Tempered Self-Similarity Alignment for Physically Plausible Video Generation</li>
+                    <li>V-PartSwap: Motion-Consistent Facial Part Transfer in Videos via Alignment-Aware Diffusion</li>
+                    <li>Generative Action Tell-Tales: Assessing Human Motion in Synthesized Videos</li>
+                    <li>Risk-Controllable Multi-View Diffusion for Driving Scenario Generation</li>
+                    <li>Test-Time Domain Adaptation for Interactive Video Generation</li>
+                    <li>The Evaluation Imperative for Video Generative Models: A Survey on Metrics, Benchmarks, and Trustworthiness</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- <section id="oral-papers" class="section">
+            <div class="container">
+                <h2><span class="section-icon"></span>Oral Papers</h2>
+                <ul class="paper-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="poster-papers" class="section bg-light">
+            <div class="container">
+                <h2><span class="section-icon"></span>Poster Papers</h2>
+                <ul class="paper-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="area-chairs" class="section">
+            <div class="container">
+                <h2><span class="section-icon"></span>Area Chairs</h2>
+                <ul class="committee-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- <section id="reviewers" class="section bg-light">
+            <div class="container">
+                <h2><span class="section-icon"></span>Reviewers</h2>
+                <ul class="committee-list">
+                    <li><a href="" target="_blank">TBD</a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Contacts</h3>
+                        <p>Lead Contacts: Shuo Xing, Mingyang Wu, Zhengzhong Tu</p>
+                        <p>Email: <a href="mailto:vgbe.cvpr@gmail.com">vgbe.cvpr@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Workshop on Video Generative Models: Benchmarks and Evaluation. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

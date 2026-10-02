@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image-to-Video Consistent Generation | VGBE 2026</title>
+  <meta
+    name="description"
+    content="Challenge flyer for Image-to-Video Consistent Generation at VGBE 2026."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="flyer-card">
+      <div class="ambient ambient-a" aria-hidden="true"></div>
+      <div class="ambient ambient-b" aria-hidden="true"></div>
+
+      <header class="hero-block">
+        <div class="hero-topline">
+          <span class="challenge-pill">Challenge 1</span>
+          <span class="hero-kicker">@ CVPR VGBE 2026</span>
+        </div>
+
+        <h1>Image-to-Video Consistent Generation</h1>
+        <p class="hero-summary">
+          Maintain visual preservation and spatiotemporal consistency from an image and text prompt.
+        </p>
+
+        <div class="status-row" aria-label="Challenge status">
+          <span class="status-chip is-open">Competition Open</span>
+          <span class="status-chip is-deadline">Deadline: Apr 1, 2026</span>
+          <span class="status-chip is-prize">Prize Pool: $1,900</span>
+        </div>
+      </header>
+
+      <section class="showcase-panel" aria-label="Visual examples">
+        <div class="visual-card visual-card-positive">
+          <div class="visual-label-row">
+            <span class="visual-label">Consistent Generation</span>
+            <span class="visual-note">Identity preserved</span>
+          </div>
+          <img src="images/left.png" alt="Consistent generation result with preserved identity across different views.">
+        </div>
+
+        <div class="visual-card visual-card-negative">
+          <div class="visual-label-row">
+            <span class="visual-label">Failure Case: Identity Shift</span>
+            <span class="visual-note">Appearance drifts during generation</span>
+          </div>
+          <img src="images/right.png" alt="Failure case showing identity shift during generation.">
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <article class="info-card">
+          <h2>Challenge Brief</h2>
+          <ul>
+            <li>Task focus: preserve subject appearance while generating coherent motion and temporal structure.</li>
+            <li>Input setting: one image plus text prompt.</li>
+            <li>Official challenge information comes from the VGBE 2026 workshop challenge page and poster materials.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h2>Important Dates</h2>
+          <ul class="date-list">
+            <li><span>Competition starts</span><strong>February 19, 2026</strong></li>
+            <li><span>Results and code deadline</span><strong>April 1, 2026</strong></li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h2>Evaluation</h2>
+          <ul>
+            <li>Submissions are evaluated on the test set using the metrics defined in the associated paper.</li>
+            <li>Human evaluation is conducted for the task as needed.</li>
+            <li>Data access and usage must follow the official dataset license.</li>
+          </ul>
+        </article>
+
+        <article class="info-card accent-card">
+          <h2>Awards</h2>
+          <ul class="award-list">
+            <li><span>1st Place</span><strong>$1,000 + Certificate</strong></li>
+            <li><span>2nd Place</span><strong>$600 + Certificate</strong></li>
+            <li><span>3rd Place</span><strong>$300 + Certificate</strong></li>
+          </ul>
+          <div class="sponsor-strip">
+            <span>Sponsored by</span>
+            <img src="../assets/ebay.png" alt="eBay logo">
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
