@@ -1,0 +1,3 @@
+# Keep unpublished organizer names local until the roster is ready.
+/data/2027-organizers.json
+.DS_Store
