@@ -19,7 +19,9 @@ Open `/` for the current edition or `/2026/` for the archived workshop. Each pag
 
 Title: **Video Generation and World Models: Benchmarks and Evaluation**.
 
-The overview, six research themes, and paper formats follow the supplied `_CVPRW_27__2nd_VGBE_Workshop.pdf` (kept outside the public repository). The page describes a proposed CVPR 2027 workshop and does not claim acceptance. Speakers retain their **Tentative** labels; organizers are not displayed. Competition details are **TBD**. The official CVPR camera-ready deadline for accepted archival workshop papers is **April 23, 2027 (AoE)**; VGBE-specific submission dates and venue details remain **TBA**.
+The overview, six research themes, and paper formats follow the supplied `_CVPRW_27__2nd_VGBE_Workshop.pdf` (kept outside the public repository). The page describes a proposed CVPR 2027 workshop and does not claim acceptance. Speakers retain their **Tentative** labels; the Organizers section at the bottom of the page remains TBA. Competition details are **TBD**. The official CVPR camera-ready deadline for accepted archival workshop papers is **April 23, 2027 (AoE)**; VGBE-specific submission dates and venue details remain **TBA**.
+
+The Call for Contributions presents the submission formats and planned Best Paper and Best Paper Runner-Up awards, along with several oral presentation slots.
 
 Paper formats are short papers of up to **4 pages** and long papers of up to **8 pages**, excluding references. Submissions are not yet open; submission links and publication details will be announced separately.
 
